@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Editar Alune</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>
+		window.ATENA_PAGE_CONFIG = {
+			title: 'Editar Alune',
+			css: '',
+			content: '',
+			js: '/public/view/alune/index.js'
+		};
+	</script>
+
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+
+	<div class="atn-layout" style="display:flex; min-height:calc(100vh - 4rem);">
+		<aside class="atn-sidebar" style="position:fixed; top:4rem; left:0; bottom:0; width:16rem; background:white; border-right:1px solid #e5e7eb; z-index:1020; padding:1rem 0; overflow-y:auto; font-family:'Inter',sans-serif;">
+			<nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+		</aside>
+		<main class="atn-main" style="margin-left:16rem; padding:2.5rem; flex:1; background:#f9fafb; min-height:calc(100vh - 4rem);">
+			<div class="atn-card" style="max-width:600px; margin:0 auto; padding:2rem;">
+				<h2 style="margin:0 0 0.25rem; color:#111827; font-weight:700;">Editar Alune</h2>
+				<p style="margin:0 0 1.5rem; color:#6b7280; font-size:0.875rem;">Encontre um cadastro para atualizar.</p>
+
+				<h4 id="msg-sucesso" role="status" style="display:none; color:#16a34a; font-weight:600; margin-bottom:1rem;">Salvo!</h4>
+
+				<div style="margin-bottom:1.5rem;">
+					<label for="selectAlune" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Alune</label>
+					<div style="display:flex; align-items:flex-end; gap:0.75rem; flex-wrap:wrap;">
+						<div style="flex:1; min-width:220px;">
+							<select id="selectAlune" class="atn-input">
+								<option value="">Carregando alunes...</option>
+							</select>
+						</div>
+						<button type="button" id="btnBuscarAlune" class="atn-btn atn-btn-primary">
+							<i class="fas fa-magnifying-glass" aria-hidden="true"></i> Buscar
+						</button>
+					</div>
+				</div>
+
+				<div id="blocoEditar" style="display:none;">
+					<form id="formSalvarAlune" style="display:flex; flex-direction:column; gap:1.25rem;">
+						<input type="hidden" id="aluneId" name="id">
+						<div>
+							<label for="aluneNome" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Nome</label>
+							<input id="aluneNome" name="nome" class="atn-input" required>
+						</div>
+						<div>
+							<label for="selectSalaEdicao" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Sala</label>
+							<select id="selectSalaEdicao" name="sala" class="atn-input" required>
+								<option value="">Selecione a sala</option>
+							</select>
+						</div>
+						<button type="submit" class="atn-btn atn-btn-primary">
+							<i class="fas fa-floppy-disk" aria-hidden="true"></i> Salvar alterações
+						</button>
+					</form>
+				</section>
+			</div>
+		</main>
+	</div>
+
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,294 @@
+/* Estilos da tela de certificados */
+.certificate-layout > .atn-main {
+	flex: 1;
+	min-width: 0;
+}
+
+.certificate-page {
+	max-width: 1120px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.certificate-header {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+	margin-bottom: 1.5rem;
+}
+
+.certificate-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 0 0.5rem;
+	color: var(--atn-primary-700);
+	font-size: var(--atn-font-size-xs);
+	font-weight: var(--atn-font-weight-semibold);
+	text-transform: uppercase;
+}
+
+.certificate-heading {
+	margin: 0;
+	color: var(--atn-gray-900);
+	font-size: var(--atn-font-size-2xl);
+	font-weight: var(--atn-font-weight-bold);
+}
+
+.certificate-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.certificate-tabs .atn-btn {
+	text-decoration: none;
+}
+
+.certificate-form {
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	border-top: 3px solid var(--atn-primary-500);
+}
+
+.certificate-form-section {
+	padding: 1.5rem 1.75rem;
+	border-bottom: 1px solid var(--atn-gray-200);
+}
+
+.certificate-section-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.25rem;
+}
+
+.certificate-step {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 2rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: var(--atn-radius-sm);
+	background: var(--atn-primary-100);
+	color: var(--atn-primary-800);
+	font-size: var(--atn-font-size-xs);
+	font-weight: var(--atn-font-weight-bold);
+}
+
+.certificate-section-heading h3 {
+	margin: 0;
+	color: var(--atn-gray-900);
+	font-size: var(--atn-font-size-base);
+	font-weight: var(--atn-font-weight-semibold);
+}
+
+.certificate-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.certificate-field--wide {
+	grid-column: 1 / -1;
+}
+
+.certificate-field label {
+	display: block;
+	margin-bottom: 0.375rem;
+	color: var(--atn-gray-700);
+	font-size: var(--atn-font-size-sm);
+	font-weight: var(--atn-font-weight-medium);
+}
+
+.certificate-alert {
+	min-height: 1.25rem;
+	margin: 0;
+	padding: 0.75rem 1.75rem 0;
+	color: var(--atn-danger-700);
+	font-size: var(--atn-font-size-sm);
+}
+
+.certificate-actions {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1.25rem 1.75rem;
+}
+
+.certificate-preview {
+	max-width: 900px;
+	margin-top: 2rem;
+}
+
+.certificate-preview-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.certificate-preview-header h3,
+.certificate-preview-section h4 {
+	margin: 0;
+	color: var(--atn-gray-900);
+	font-size: var(--atn-font-size-lg);
+	font-weight: var(--atn-font-weight-semibold);
+}
+
+.certificate-preview-section h4 {
+	margin: 1.25rem 0 0.5rem;
+	font-size: var(--atn-font-size-base);
+}
+
+.certificate-preview-sheet {
+	max-width: 100%;
+	overflow-x: auto;
+	padding: 0.5rem 0 1rem;
+}
+
+@media (max-width: 767.98px) {
+	.certificate-fields {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.certificate-field--wide {
+		grid-column: auto;
+	}
+
+	.certificate-form-section {
+		padding: 1.25rem 1rem;
+	}
+
+	.certificate-alert {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.certificate-actions {
+		padding: 1rem;
+	}
+
+	.certificate-actions .atn-btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+#frente, #verso{
+    margin:auto;
+    border: 10px solid orange;
+    height: 480px;
+    width: 854px;
+    background-image: url('/public/img/certificado_atena.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 854px 480px;
+    background-color: white;
+}
+
+#conteudo{
+    border: 10px solid black;
+    height: 460px;
+    width: 834px;
+}
+
+#corpo{
+    font-size: 15px;
+    text-align: justify;
+    margin: 20px;
+}
+
+#assinatura-cursinho{
+    width: 400px;
+    margin-top: 135px;
+}
+
+#carga-horaria {
+    border-collapse: collapse;
+    width: 99%;
+    margin-top: 20px;
+}
+
+#carga-horaria td {
+    font-size: 20px;
+    border: 1px solid black;
+}
+#carga-horaria th {
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+#AtividadesDesenvolvidas{
+    text-align: center;
+}
+
+#unespFrente{
+    height: 100px;
+    float: right;
+}
+
+#ibbFrente{
+    height: 100px;
+    float: left;
+}
+
+#unespVerso{
+    height: 100px;
+    float: right;
+    margin-top: 250px;
+}
+
+#ibbVerso{
+    height: 100px;
+    float: left;
+    margin-top: 250px;
+}
+
+#assinaturaDiscente{
+    height: 100px;
+    width: 250px;
+    border-bottom: solid 2px;
+}
+#assinaturaDocente{
+    height: 100px;
+    width: 250px;
+    border-bottom: solid 2px;
+}
+
+.assinaturas{
+    border: none;
+    text-align: center;
+}
+
+.form-control {
+    width: 70%;
+}
+
+.horas{
+    margin-left: 5px;
+}
+
+.tituloCertificado{
+    font-family: 'FontAwesome';
+    text-align: center;
+    margin-top: 15px;
+    font-size: 32px;
+}
+
+.discente{
+    padding-left: 100px;
+}
+
+.docente{
+    padding-right: 100px;
+}
+
+#detalhes{
+    display: none;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Certificado de Monitores</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="/public/view/certificado/styles.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>
+		window.ATENA_PAGE_CONFIG = { title: 'Certificado de Monitores', css: '', content: '', js: '' };
+	</script>
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+	<div class="atn-layout certificate-layout">
+		<aside class="atn-sidebar">
+			<nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+		</aside>
+		<main class="atn-main">
+			<div class="certificate-page">
+			<header class="certificate-header">
+				<div>
+					<p class="certificate-eyebrow"><i class="fas fa-award" aria-hidden="true"></i> Emissão de certificados</p>
+					<h2 class="certificate-heading">Certificado de Monitores</h2>
+				</div>
+				<nav class="certificate-tabs" aria-label="Tipo de certificado">
+					<a href="/certificado" class="atn-btn atn-btn-primary" aria-current="page">Monitores</a>
+					<a href="/certificado/tutore" class="atn-btn atn-btn-secondary">Tutores</a>
+				</nav>
+			</header>
+
+			<form id="formCertificadoMonitore" class="atn-card certificate-form">
+				<p class="message_alert certificate-alert" id="messageAlert" role="status"></p>
+				<section class="certificate-form-section">
+					<div class="certificate-section-heading">
+						<span class="certificate-step">01</span>
+						<h3>Monitore e período</h3>
+					</div>
+					<div class="certificate-fields">
+						<div class="certificate-field certificate-field--wide">
+							<label for="monitore">Monitore</label>
+							<select class="atn-input" id="monitore" name="monitore" onchange="buscarMonitore()" required>
+							<option value="">Selecione o monitore</option>
+						</select>
+					</div>
+						<div class="certificate-field">
+							<label for="dataInicial">Data Inicial</label>
+						<input id="dataInicial" name="dataInicial" type="date" class="atn-input" required>
+					</div>
+						<div class="certificate-field">
+							<label for="dataFinal">Data Final</label>
+						<input id="dataFinal" name="dataFinal" type="date" class="atn-input" required>
+						</div>
+					</div>
+				</section>
+				<section class="certificate-form-section">
+					<div class="certificate-section-heading">
+						<span class="certificate-step">02</span>
+						<h3>Assinaturas</h3>
+					</div>
+					<div class="certificate-fields">
+						<div class="certificate-field">
+							<label for="docente">Coordenador Docente do Projeto</label>
+							<select class="atn-input" id="docente" name="docente" onchange="buscarDocente()" required>
+							<option value="">Selecione o docente</option>
+						</select>
+					</div>
+						<div class="certificate-field">
+							<label for="discente">Coordenador Discente do Projeto</label>
+							<select class="atn-input" id="discente" name="discente" onchange="buscarDiscente()" required>
+							<option value="">Selecione o discente</option>
+						</select>
+					</div>
+				</div>
+				</section>
+				<div class="certificate-actions">
+					<button class="atn-btn atn-btn-primary" type="submit"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> Gerar Certificado</button>
+				</div>
+			</form>
+
+			<div id="detalhes" class="certificate-preview" style="display:none;">
+				<div class="certificate-preview-header">
+					<h3>Prévia do certificado</h3>
+					<button class="atn-btn atn-btn-primary" type="button" onclick="downloadVersoMonitore();downloadFrenteMonitore();"><i class="fas fa-download" aria-hidden="true"></i> Baixar Certificado</button>
+				</div>
+				<div class="certificate-preview-section">
+					<h4>Frente</h4>
+					<div class="certificate-preview-sheet">
+					<div id="frente">
+						<div id="conteudo">
+							<h1 id="titulo" class="tituloCertificado">CERTIFICADO</h1>
+							<div id="corpo">
+								Certificamos que <b class="nomeMonitore"></b> participou do Programa de Extensão Universitária Cursinho Pré Universitário Atena do Instituto de Biociencias da UNESP de Botucatu na condição de <b class="nomeMateria">Monitor(a)</b> no periodo de <label class="mesInicial"></label> a <label class="mesFinal"></label> de <label class="anoFinal"></label>.
+							</div>
+							<table id="assinaturas">
+								<tr>
+									<td class="assinaturas docente">
+										<div id="assinaturaDocente"></div>
+										<label class="assinaturas" id="nomeDocente"></label><br>
+										<label class="assinaturas">Coordenador Docente do Projeto</label>
+									</td>
+									<td class="assinaturas discente">
+										<div id="assinaturaDiscente"></div>
+										<label class="assinaturas" id="nomeDiscente"></label><br>
+										<label class="assinaturas">Coordenador Discente do Projeto</label>
+									</td>
+								</tr>
+							</table>
+							<div>
+								<img id="ibbFrente" src="/public/img/ibb.png" />
+								<img id="unespFrente" src="/public/img/unesp.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="certificate-preview-section">
+					<h4>Verso</h4>
+					<div class="certificate-preview-sheet">
+					<div id="verso">
+						<div id="conteudo">
+							<table id="carga-horaria">
+								<tr><th colspan="2" id="AtividadesDesenvolvidas">Atividades Desenvolvidas</th></tr>
+								<tr><td><div class="horas"></div>Monitorias</td><td><div class="presencaMonitorias horas"></div></td></tr>
+							</table>
+							<div>
+								<img id="ibbVerso" src="/public/img/ibb.png" />
+								<img id="assinatura-cursinho" src="/public/img/assinatura-cursinho.png" />
+								<img id="unespVerso" src="/public/img/unesp.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+		</main>
+	</div>
+
+	<script>
+		document.addEventListener('atn:auth-ready', function() {
+		$(document).ready(function() {
+			buscarMonitores();
+			buscarRepresentantes();
+			$('#formCertificadoMonitore').on('submit', function(event) {
+				event.preventDefault();
+				$('#detalhes').hide();
+				gerarCertificadoMonitore();
+				if ($('#detalhes').is(':visible')) {
+					$('#detalhes')[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+			});
+			$('#dataInicial').on('change', function() {
+				$('#dataFinal').attr('min', this.value);
+			});
+		});
+		}, { once: true });
+	</script>
+    <script src="/public/js/certificado.js"></script>
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>

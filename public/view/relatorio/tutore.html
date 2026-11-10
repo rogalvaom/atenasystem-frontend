@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Relatório de Tutores</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="/public/view/relatorio/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>window.ATENA_PAGE_CONFIG = { title: 'Relatório de Tutores', css: '', content: '', js: '/public/view/relatorio/tutore.js' };</script>
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+	<div class="atn-layout report-layout">
+		<aside class="atn-sidebar"><nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav></aside>
+		<main class="atn-main">
+			<div class="report-page">
+				<header class="report-header">
+					<div>
+						<p class="report-eyebrow"><i class="fas fa-chart-column" aria-hidden="true"></i> Indicadores de frequência</p>
+						<h2 class="report-heading">Relatório de Tutores</h2>
+					</div>
+					<nav class="report-tabs" aria-label="Tipo de relatório">
+						<a href="/relatorio/alune" class="atn-btn atn-btn-secondary">Alunes</a>
+						<a href="/relatorio/monitore" class="atn-btn atn-btn-secondary">Monitores</a>
+						<a href="/relatorio/reuniao" class="atn-btn atn-btn-secondary">Reunião</a>
+						<a href="/relatorio/tutore" class="atn-btn atn-btn-primary" aria-current="page">Tutores</a>
+					</nav>
+				</header>
+				<form id="formRelatorioTutore" class="atn-card report-filter">
+					<section class="report-filter-section">
+						<div class="report-section-heading"><span class="report-step">01</span><h3>Sala e período</h3></div>
+						<div class="report-fields">
+							<div class="report-field report-field--wide">
+								<label for="selectCodSalaTutore">Sala</label>
+								<select name="cod_sala" id="selectCodSalaTutore" class="atn-input" required><option value="">Carregando salas...</option></select>
+							</div>
+							<div class="report-field"><label for="inputDataInicialTutore">Data Inicial</label><input name="data_inicial" id="inputDataInicialTutore" class="atn-input" type="date" required></div>
+							<div class="report-field"><label for="inputDataFinalTutore">Data Final</label><input name="data_final" id="inputDataFinalTutore" class="atn-input" type="date" required></div>
+						</div>
+					</section>
+					<div class="report-actions"><button type="submit" class="atn-btn atn-btn-primary"><i class="fas fa-chart-line" aria-hidden="true"></i> Gerar Relatório</button></div>
+				</form>
+				<div id="relatorioTableContainerTutore" class="report-results" style="display:none;">
+					<header class="report-results-header"><h3>Presença por tutore</h3></header>
+					<div class="report-table-wrap"><table class="report-table" id="tableRelatorioTutore"><thead><tr><th>Nome</th><th>Presença</th></tr></thead><tbody></tbody></table></div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>

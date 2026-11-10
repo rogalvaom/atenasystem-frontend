@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtenaSystem - Criar Monitore</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+    <script>
+        window.ATENA_PAGE_CONFIG = {
+            title: 'Criar Monitore',
+            css: '',
+            content: '',
+            js: '/public/view/monitore/index.js'
+        };
+    </script>
+
+    <nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+
+    <div class="atn-layout" style="display:flex; min-height:calc(100vh - 4rem);">
+        <aside class="atn-sidebar" style="position:fixed; top:4rem; left:0; bottom:0; width:16rem; background:white; border-right:1px solid #e5e7eb; z-index:1020; padding:1rem 0; overflow-y:auto; font-family:'Inter',sans-serif;">
+            <nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+        </aside>
+        <main class="atn-main" style="margin-left:16rem; padding:2.5rem; flex:1; background:#f9fafb; min-height:calc(100vh - 4rem);">
+            <div class="atn-card" style="max-width:600px; margin:0 auto; padding:2rem;">
+                <h2 style="margin-bottom:0.25rem; color:#111827; font-weight:700;">Novo Monitore</h2>
+                <p style="color:#6b7280; margin-bottom:1.5rem; font-size:0.875rem;">Preencha os dados abaixo para cadastrar um monitore.</p>
+
+                <h4 id="msg-sucesso" style="display:none; color:#16a34a; font-weight:600; margin-bottom:1rem;">Salvo com sucesso!</h4>
+
+                <form id="formCriarMonitore" style="display:flex; flex-direction:column; gap:1.25rem;">
+                    <div>
+                        <label for="nome" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Nome</label>
+                        <input id="nome" name="nome" class="atn-input" required autofocus>
+                    </div>
+                    <div>
+                        <label for="usuario" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Usuário</label>
+                        <input id="usuario" name="usuario" class="atn-input" required>
+                    </div>
+                    <div>
+                        <label for="senha" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Senha</label>
+                        <input id="senha" name="senha" type="password" class="atn-input" required>
+                    </div>
+                    <button type="submit" class="atn-btn atn-btn-primary">Criar Monitore</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>

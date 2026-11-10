@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Disciplinas</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>
+		window.ATENA_PAGE_CONFIG = {
+			title: 'Disciplinas',
+			css: '',
+			content: '',
+			js: '/public/view/disciplina/index.js'
+		};
+	</script>
+
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+
+	<div class="atn-layout" style="display:flex; min-height:calc(100vh - 4rem);">
+		<aside class="atn-sidebar" style="position:fixed; top:4rem; left:0; bottom:0; width:16rem; background:white; border-right:1px solid #e5e7eb; z-index:1020; padding:1rem 0; overflow-y:auto; font-family:'Inter',sans-serif;">
+			<nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+		</aside>
+		<main class="atn-main" style="margin-left:16rem; padding:2.5rem; flex:1; background:#f9fafb; min-height:calc(100vh - 4rem);">
+			<div>
+				<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+					<div>
+						<h2 style="margin:0; color:#111827; font-weight:700; font-size:1.5rem;">Disciplinas</h2>
+						<p style="margin:0.25rem 0 0; color:#6b7280; font-size:0.875rem;">Gerencie as disciplinas cadastradas.</p>
+					</div>
+					<a href="/disciplina/criar" class="atn-btn atn-btn-primary" style="display:inline-flex; gap:0.5rem; align-items:center;">
+						<i class="fas fa-plus" aria-hidden="true"></i> Nova Disciplina
+					</a>
+				</div>
+
+				<h4 id="msg-sucesso" role="status" style="display:none; color:#16a34a; font-weight:600; margin-bottom:1rem;">Salva com sucesso!</h4>
+				<h4 id="msg-delete" role="status" style="display:none; color:#dc2626; font-weight:600; margin-bottom:1rem;">Excluída!</h4>
+
+				<div style="max-width:420px; margin-bottom:1rem;">
+					<label for="buscaDisciplina" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Pesquisar disciplina</label>
+					<input id="buscaDisciplina" type="search" class="atn-input" placeholder="Digite um nome ou ID">
+				</div>
+
+				<div class="atn-card" style="overflow:hidden;">
+					<div style="overflow-x:auto;">
+						<table style="width:100%; border-collapse:collapse; font-size:0.875rem;">
+							<thead style="background:#fffbeb; color:#92400e; text-align:left; text-transform:uppercase; font-size:0.75rem; letter-spacing:0.05em; font-weight:600;">
+								<tr>
+									<th style="padding:1rem;">ID</th>
+									<th style="padding:1rem;">Nome</th>
+									<th style="padding:1rem; text-align:center;">Ações</th>
+								</tr>
+							</thead>
+							<tbody id="tabela-disciplinas">
+								<tr style="border-bottom:1px solid #f3f4f6;">
+									<td colspan="3" style="padding:2rem; text-align:center; color:#9ca3af;">Carregando disciplinas...</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,109 @@
+<!-- Componentes reutilizáveis do sistema -->
+
+<!-- Navigation -->
+
+<!-- Card Component -->
+<div class="atn-card" data-component="card">
+    <div class="atn-card-header">
+        <h5 class="atn-card-title"></h5>
+        <button class="atn-card-action" type="button" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="atn-card-body">
+        <!-- Conteúdo do card -->
+    </div>
+    <div class="atn-card-footer">
+        <!-- Conteúdo do rodapé -->
+    </div>
+</div>
+
+<!-- Form Field -->
+<div class="atn-form-group" data-component="form-field">
+    <label class="atn-label"></label>
+    <div class="atn-input-wrapper">
+        <input class="atn-input" type="text" />
+        <span class="atn-input-error" role="alert"></span>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="atn-table-container" data-component="table">
+    <div class="atn-table-header">
+        <div class="atn-table-search">
+            <div class="atn-input-group">
+                <span class="atn-input-group-text"><i class="fas fa-search"></i></span>
+                <input class="atn-input" type="search" placeholder="Pesquisar..." />
+            </div>
+        </div>
+    </div>
+    <div class="atn-table-wrapper">
+        <table class="atn-table">
+            <thead>
+                <tr>
+                    <!-- Cabeçalhos injetados via JS -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas injetadas via JS -->
+            </tbody>
+        </table>
+    </div>
+    <div class="atn-table-footer">
+        <div class="atn-table-info"></div>
+        <div class="atn-pagination"></div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="atn-modal" data-component="modal">
+    <div class="atn-modal-backdrop"></div>
+    <div class="atn-modal-content">
+        <div class="atn-modal-header">
+            <h3 class="atn-modal-title"></h3>
+            <button class="atn-modal-close" type="button" aria-label="Fechar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="atn-modal-body">
+            <!-- Conteúdo do modal -->
+        </div>
+        <div class="atn-modal-footer">
+            <!-- Conteúdo do rodapé do modal -->
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="atn-toast" data-component="toast">
+    <div class="atn-toast-content">
+        <div class="atn-toast-icon"></div>
+        <div class="atn-toast-message"></div>
+        <button class="atn-toast-close" type="button" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Status Badge -->
+<span class="atn-badge" data-component="badge"></span>
+
+<!-- Dropdown Menu -->
+<div class="atn-dropdown-container" data-component="dropdown">
+    <div class="atn-dropdown-trigger">
+        <button class="atn-dropdown-btn" type="button">
+            <span></span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <div class="atn-dropdown-menu">
+        <!-- Itens injetados via JS -->
+    </div>
+</div>
+
+<!-- Empty State -->
+<div class="atn-empty-state" data-component="empty">
+    <div class="atn-empty-icon"></div>
+    <h4 class="atn-empty-title"></h4>
+    <p class="atn-empty-message"></p>
+</div>

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./docker
+    image: atenasystem-frontend:python
+    container_name: atenasystem_frontend
+    ports:
+      - "80:8000"
+    volumes:
+      - .:/app
+    restart: always
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+    driver: bridge

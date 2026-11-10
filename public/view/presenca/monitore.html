@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Presença de Monitores</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="/public/view/presenca/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>
+		window.ATENA_PAGE_CONFIG = { title: 'Presença de Monitores', css: '', content: '', js: '/public/view/presenca/monitore.js' };
+	</script>
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+	<div class="atn-layout attendance-layout">
+		<aside class="atn-sidebar">
+			<nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+		</aside>
+		<main class="atn-main">
+			<div class="attendance-page">
+			<header class="attendance-header">
+				<div>
+					<p class="attendance-eyebrow"><i class="fas fa-clipboard-check" aria-hidden="true"></i> Controle de presença</p>
+					<h2 class="attendance-heading">Presença de Monitores</h2>
+				</div>
+				<nav class="attendance-tabs" aria-label="Tipo de presença">
+					<a href="/presenca/alune" class="atn-btn atn-btn-secondary">Alunes</a>
+					<a href="/presenca/monitore" class="atn-btn atn-btn-primary" aria-current="page">Monitores</a>
+					<a href="/presenca/reuniao" class="atn-btn atn-btn-secondary">Reunião</a>
+					<a href="/presenca/tutore" class="atn-btn atn-btn-secondary">Tutores</a>
+				</nav>
+			</header>
+			<div class="atn-card attendance-form">
+				<h4 id="messageStatusMonitore" class="attendance-alert" role="status" style="display:none;"></h4>
+				<form id="formCadastroMonitore">
+					<section class="attendance-form-section">
+						<div class="attendance-section-heading"><span class="attendance-step">01</span><h3>Dados da presença</h3></div>
+						<div class="attendance-fields">
+							<div class="attendance-field attendance-field--wide">
+								<label for="selectSalaMonitore">Sala</label>
+								<select name="sala" id="selectSalaMonitore" class="atn-input" required><option value="">Carregando salas...</option></select>
+							</div>
+							<div class="attendance-field">
+								<label for="inputDataMonitore">Data</label>
+								<input name="data" id="inputDataMonitore" class="atn-input" type="date" required>
+							</div>
+							<div class="attendance-field">
+								<label for="selectMonitore">Monitore</label>
+								<select name="monitore" id="selectMonitore" class="atn-input" required><option value="">Carregando monitores...</option></select>
+							</div>
+						</div>
+					</section>
+					<div class="attendance-actions">
+						<button type="submit" class="atn-btn atn-btn-primary"><i class="fas fa-check" aria-hidden="true"></i> Salvar Presença</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</main>
+	</div>
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtenaSystem - Editar Representante</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+    <script>
+        window.ATENA_PAGE_CONFIG = {
+            title: 'Editar Representante',
+            css: '',
+            content: '',
+            js: '/public/view/representante/index.js'
+        };
+    </script>
+
+    <nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+
+    <div class="atn-layout" style="display:flex; min-height:calc(100vh - 4rem);">
+        <aside class="atn-sidebar" style="position:fixed; top:4rem; left:0; bottom:0; width:16rem; background:white; border-right:1px solid #e5e7eb; z-index:1020; padding:1rem 0; overflow-y:auto; font-family:'Inter',sans-serif;">
+            <nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+        </aside>
+        <main class="atn-main" style="margin-left:16rem; padding:2.5rem; flex:1; background:#f9fafb; min-height:calc(100vh - 4rem);">
+            <div class="atn-card" style="max-width:600px; margin:0 auto; padding:2rem;">
+                <h2 style="margin-bottom:0.25rem; color:#111827; font-weight:700;">Editar Representante</h2>
+                <p style="color:#6b7280; margin-bottom:1.5rem; font-size:0.875rem;">Edite os dados do representante selecionado.</p>
+
+                <h4 id="msg-sucesso" style="display:none; color:#16a34a; font-weight:600; margin-bottom:1rem;">Salvo!</h4>
+                <h4 id="msg-delete" style="display:none; color:#dc2626; font-weight:600; margin-bottom:1rem;">Excluído!</h4>
+
+                <div id="blocoEditar" style="display:block;">
+                    <form id="formSalvarRepresentante" enctype="multipart/form-data" style="display:flex; flex-direction:column; gap:1.25rem;">
+                        <input type="hidden" id="representanteId" name="id">
+                        <div>
+                            <label for="representanteNome" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Nome</label>
+                            <input id="representanteNome" name="nome" class="atn-input" required>
+                        </div>
+                        <div>
+                            <label for="representanteUsuario" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Usuário</label>
+                            <input id="representanteUsuario" name="usuario" class="atn-input" required>
+                        </div>
+                        <div>
+                            <label for="representanteSenha" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Nova Senha (deixe em branco se não desejar alterar)</label>
+                            <input id="representanteSenha" name="senha" type="password" class="atn-input">
+                        </div>
+                        <div>
+                            <label for="representanteAssinatura" style="display:block; font-weight:500; color:#374151; font-size:0.875rem; margin-bottom:0.25rem;">Assinatura</label>
+                            <input id="representanteAssinatura" name="assinatura" type="file" class="atn-input" accept="image/*">
+                        </div>
+                        <div id="blocoAssinaturaAtual" style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; display:none; background:#fff;">
+                            <label style="color:#6b7280; font-weight:600; font-size:0.875rem;">Assinatura Atual</label>
+                            <br>
+                            <img id="imgAssinaturaAtual" style="max-width:150px; border-radius:0.5rem; margin-top:0.5rem;" src="">
+                        </div>
+                        <button type="submit" class="atn-btn atn-btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>

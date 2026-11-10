@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtenaSystem - Login</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/public/view/login/styles.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-brand">
+            <h2>Atena<span>System</span></h2>
+        </div>
+        <form id="formLogin" onsubmit="return false;">
+            <div class="form-group">
+                <label for="usuario" class="form-label">Usuário</label>
+                <input type="text" id="usuario" name="usuario" class="form-input" placeholder="Digite seu usuário" autofocus required>
+            </div>
+            <div class="form-group">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" id="senha" name="senha" class="form-input" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit" class="btn-login">Entrar</button>
+            <div id="msg-erro" class="error-msg">Login ou senha incorreto</div>
+        </form>
+    </div>
+    <script src="/core/md5.js"></script>
+    <script src="/public/view/login/index.js"></script>
+</body>
+</html>
+
+

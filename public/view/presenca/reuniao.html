@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AtenaSystem - Presença de Reunião</title>
+	<link rel="stylesheet" href="/public/css/styles.css">
+	<link rel="stylesheet" href="/public/view/presenca/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/public/img/atena.png">
+</head>
+<body>
+	<script>
+		window.ATENA_PAGE_CONFIG = { title: 'Presença de Reunião', css: '', content: '', js: '/public/view/presenca/reuniao.js' };
+	</script>
+	<nav class="atn-navbar" id="atn-navbar" data-shared-navbar></nav>
+	<div class="atn-layout attendance-layout">
+		<aside class="atn-sidebar">
+			<nav class="atn-sidebar-nav" id="atn-sidebar-nav"></nav>
+		</aside>
+		<main class="atn-main">
+			<div class="attendance-page">
+			<header class="attendance-header">
+				<div>
+					<p class="attendance-eyebrow"><i class="fas fa-clipboard-check" aria-hidden="true"></i> Controle de presença</p>
+					<h2 class="attendance-heading">Presença de Reunião</h2>
+				</div>
+				<nav class="attendance-tabs" aria-label="Tipo de presença">
+					<a href="/presenca/alune" class="atn-btn atn-btn-secondary">Alunes</a>
+					<a href="/presenca/monitore" class="atn-btn atn-btn-secondary">Monitores</a>
+					<a href="/presenca/reuniao" class="atn-btn atn-btn-primary" aria-current="page">Reunião</a>
+					<a href="/presenca/tutore" class="atn-btn atn-btn-secondary">Tutores</a>
+				</nav>
+			</header>
+			<div class="atn-card attendance-form">
+				<h4 id="messageStatusReuniao" class="attendance-alert" role="status" style="display:none;"></h4>
+				<form id="formCadastroReuniao">
+					<section class="attendance-form-section">
+						<div class="attendance-section-heading"><span class="attendance-step">01</span><h3>Data da reunião</h3></div>
+						<div class="attendance-field attendance-field--wide" style="max-width:420px;">
+							<label for="inputDataReuniao">Data</label>
+							<input name="data" id="inputDataReuniao" class="atn-input" type="date" required>
+						</div>
+					</section>
+					<section class="attendance-form-section">
+						<div class="attendance-section-heading"><span class="attendance-step">02</span><h3>Tutores presentes</h3></div>
+						<div class="attendance-table-wrap">
+							<table id="tableTutores" class="attendance-table">
+								<thead><tr><th>Nome</th><th style="text-align:center; width:120px;">Presente</th></tr></thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</section>
+					<div class="attendance-actions">
+						<button type="submit" class="atn-btn atn-btn-primary"><i class="fas fa-check" aria-hidden="true"></i> Salvar Presença</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</main>
+	</div>
+	<script type="module" src="/public/js/menu.js"></script>
+</body>
+</html>
