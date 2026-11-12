@@ -57,10 +57,10 @@ class Api {
             processData = false;
             contentType = false;
         } else if (data !== null) {
-            requestData = JSON.stringify(data);
-            requestHeaders = {
-                "Content-Type": "application/json",
-            };
+            requestData = data;
+            requestHeaders = {};
+            processData = true;
+            contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
         }
 
         $.ajax({

@@ -1,6 +1,4 @@
-import { authReady } from './auth.js';
-
-const session = await authReady;
+const session = await window.atnAuthReady;
 
 const [{ renderNavbar }] = await Promise.all([
     import('./navbar.js'),

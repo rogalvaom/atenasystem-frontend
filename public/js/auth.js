@@ -10,10 +10,12 @@ function getStoredModulos() {
     }
 }
 
-export const authReady = (async function() {
+const authReady = (async function() {
     if (publicPaths.has(currentPath)) return { public: true };
 
-    document.body.style.visibility = 'hidden';
+    if (document.body) {
+        document.body.style.visibility = 'hidden';
+    }
     
     let session = null;
     try {
@@ -78,7 +80,9 @@ export const authReady = (async function() {
         });
     }
 
-    document.body.style.visibility = 'visible';
+    if (document.body) {
+        document.body.style.visibility = 'visible';
+    }
     return session;
 })();
 
